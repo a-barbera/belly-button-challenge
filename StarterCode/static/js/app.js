@@ -43,7 +43,7 @@ function demographicInfo(sample){
     //narrowing down results to match the id name selected in the function:
     d3.json(url).then(function(dataset) {
         var metadata = dataset.metadata
-        var singleData = metadata.filter(mdata => mdata.id == sample);
+        var singleData = metadata.filter(object => object.id == sample);
         console.log(singleData)
         var result=singleData[0];
 
@@ -60,7 +60,7 @@ function makeChart(sample) {
     d3.json(url).then(function(dataset) {
         let samples = dataset.samples
         console.log(samples)
-        var singleSample = samples.filter(sdata => sdata.id == sample)
+        var singleSample = samples.filter(object => object.id == sample)
         console.log(singleSample)
 
         //further going into the dataset to access the object contents and assigning it a variable name
